@@ -1,7 +1,7 @@
 <div class="container">
   <app-choosecategory [all]="getTotalExpense()" [grocery]="getTotalExpenseBygrocery()" [travel]="getTotalExpenseBytravel()"
     [movies]="getTotalExpenseByMovies()" (countradionbittonselectedChanged)="onexpenseCountRadioButtonChange($event);"></app-choosecategory>
-  <p>Expense list Record</p>
+  <p>Expense list Records</p>
   <button type="button" class="btn btn-danger" routerLink="/addexpense">Add Expense</button>
   <table class="table" *ngIf="expenselist">
     <thead>
@@ -17,7 +17,7 @@
 
     <tbody>
       <tr *ngIf="expenselist.length==0">
-        <td colspan="5"> No Expense List to Display</td>
+        <td colspan="5">  No Expense List to Display</td>
       </tr>
       <ng-container *ngFor="let expense of expenselist ;let index=index;">
         <tr *ngIf="selectedexpenseCountRadioButton=='All' || selectedexpenseCountRadioButton==expense.categoryId.categoryName" [ngClass]="{'myStyle': 0 === index % 2}">
